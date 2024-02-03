@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ccbebe;
+            text-align: center;
+        }
+
+        .calculator {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #bd9696;
+            border-radius: 8px;
+            
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            box-shadow: 0 0 10px rgba(6, 240, 64, 0.911);
+        }
+
+        button {
+            background-color: rgb(4, 97, 134);
+            color: black;
+            padding: 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-shadow: 0 0 10px rgb(132, 9, 233);
+        }
+        button:hover {
+            background-color: blue;
+        }
+        #result {
+            margin: 30px;
+            font-weight:  bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <h2>Salary Calculator</h2>
+        <input type="number" id="totalSalary" placeholder="Enter total salary">
+        <input type="number" id="totalLeaves" placeholder="Enter total leaves">
+
+        <button onclick="calculateSalary()">Calculate Salary</button>
+
+        <div id="result"></div>
+    </div>
+
+    <script>
+        function calculateSalary() {
+            var totalSalary = document.getElementById("totalSalary").value;
+            var totalLeaves = document.getElementById("totalLeaves").value;
+            var Salaryaftercutting = (totalSalary/31) * (31-totalLeaves); 
+            document.getElementById("result").innerHTML = "SalaryAfterCutting: RS " + Salaryaftercutting;
+        }
+    </script>
+</body>
+</html>
